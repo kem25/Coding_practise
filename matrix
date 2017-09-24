@@ -1,0 +1,79 @@
+// Matrix diagonal difference problem
+
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+
+
+public class Solution {
+
+    public static void main(String[] args) {
+       /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in = new Scanner(System.in);
+        int N;
+        N = in.nextInt();
+        int [][]matrix=new int[N][N];
+        for(int i=0; i<N; i++){
+            for(int j=0; j<N; j++){
+                matrix[i][j] = in.nextInt();
+            }
+        }
+    int d1 = 0;
+    int d2 = 0;
+    for(int i=0; i<N; i++){
+        d1 += matrix[i][i];
+        d2 += matrix[i][N-1-i];
+    }
+    int result = Math.abs(d1-d2);
+    System.out.println(result);
+}
+
+}
+
+/* Given an array, give an output that has six decimal precision of fractions of array's
+positive, negative and zero elements*/
+
+import java.io.*;
+import java.util.*;
+import java.text.DecimalFormat;
+import java.math.RoundingMode;
+
+public class Solution {
+    public static double[] compareArray(int N, int[] arr){
+        double result[]={0,0,0};
+        for(int i=0; i<N; i++){
+            if(arr[i]<0){
+                result[0]++;
+            }
+            else if(arr[i]>0){
+                result[1]++;
+            }
+            else{
+               result[2]++; 
+            }  
+        }
+        for(int j=0; j<result.length;j++){
+            result[j]=result[j]/N;
+        }
+        DecimalFormat df = new DecimalFormat("#.######");
+        df.setRoundingMode(RoundingMode.CEILING);
+        for (int j=0; j<result.length;j++) {
+        result[j]=df.format(result[j]);
+}
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int N;
+        N = in.nextInt();
+        int []arr = new int[N];
+        for(int i=0;i<N;i++){
+            arr[i] = in.nextInt();
+        }
+         double [] result = compareArray(N,arr);
+        for(int o=0; o<result.length; o++){
+            System.out.println(result[o]);
+        }
+    }
+} 
