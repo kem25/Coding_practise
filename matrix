@@ -171,4 +171,27 @@ public class Solution {
         return righth +1;
     }
     }
-
+// level order traversal
+ /* 
+    
+    class Node 
+       int data;
+       Node left;
+       Node right;
+   */
+   void levelOrder(Node root) {
+       Queue<Node> q = new LinkedList<Node>();
+       q.add(root);
+       while(q!=null){
+           Node d= q.remove();
+           System.out.print(d.data+" ");
+           if(d.left!=null){
+               q.add(d.left);
+           }
+           if(d.right!=null){
+               q.add(d.right);
+           }
+       }
+      
+      
+    }
