@@ -148,3 +148,27 @@ public class Solution {
         String result = timeConversion(s);
         System.out.println(result);
     }
+
+    //  height of binary tree calculation
+/*
+    class Node 
+        int data;
+        Node left;
+        Node right;
+    */
+ 
+     static int height(Node root) {
+         if (root == null) {
+        return -1;
+    }
+
+    int lefth = height(root.left);
+    int righth = height(root.right);
+
+    if (lefth > righth) {
+        return lefth +1;
+    } else {
+        return righth +1;
+    }
+    }
+
