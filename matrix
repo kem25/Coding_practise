@@ -237,4 +237,141 @@ static void addNode(Node root, Node newNode) {
     } 
        
     }
+// Insertion at the tail of linkedlist
+
+/*
+  Insert Node at the end of a linked list 
+  head pointer input could be NULL as well for empty list
+  Node is defined as 
+  class Node {
+     int data;
+     Node next;
+  }
+*/
+Node Insert(Node head,int data) {
+    Node node = head;
+    if(node==null){
+        node.data = data;
+        node.next = null;
+        return head;
+    }
+    else{
+        while(node.next!=null){
+            node=node.next;
+        }
+        Node newnode = new Node();
+        node.next= newnode;
+        newnode.data = data; 
+        newnode.next = null;
+        return head;
+    }
+    
+// This is a "method-only" submission. 
+// You only need to complete this method. 
+  
+}
+// inser a new node at the head of linkedlist
+/*
+  Insert Node at the beginning of a linked list 
+  head pointer input could be NULL as well for empty list
+  Node is defined as 
+  class Node {
+     int data;
+     Node next;
+  }
+*/
+// This is a "method-only" submission. 
+// You only need to complete this method. 
+
+Node Insert(Node head,int x) {
+    Node node = head;
+    if(node==null){
+        node.data=x;
+        node.next=null;
+        return head;     
+    }
+    else{
+        Node newnode= new Node();
+        newnode.data=x;
+        newnode.next=head;
+        return newnode;  
+    }
+    
+}
+
+// Insert node at particular position in linkedlist
+/*
+  Insert Node at a given position in a linked list 
+  head can be NULL 
+  First element in the linked list is at position 0
+  Node is defined as 
+  class Node {
+     int data;
+     Node next;
+  }
+*/
+    
+
+Node InsertNth(Node head, int data, int position) {
+    Node node = head;
+    int i=0;
+    if(head==null){
+        head.data=data;
+        head.next=null;
+        return head;   
+    }
+    else if(position==0){
+        Node newnode = new Node();
+        newnode.data=data;
+        newnode.next=head;
+        return newnode;
+}
+    else{
+    while(i<position-1){
+            node = node.next;
+        i++;
+        }
+        Node tempnode = node.next;
+        node.next = new Node();
+        node.next.data = data;
+        node.next.next = tempnode;
+        return head;
+    }
+   // This is a "method-only" submission. 
+    // You only need to complete this method.
+        
+
+}
+
+// deletionof node from linkedlist
+/*
+  Delete Node at a given position in a linked list 
+  head pointer input could be NULL as well for empty list
+  Node is defined as 
+  class Node {
+     int data;
+     Node next;
+  }
+*/
+    // This is a "method-only" submission. 
+    // You only need to complete this method. 
+
+Node Delete(Node head, int position) {
+    Node node = head;
+    int i =0;
+  if(position==0){
+   head=head.next;
+      return head;
+  }
+else{
+    while(i<position-1){
+        node= node.next;
+        i++;
+    }
+    node.next= node.next.next;
+    
+    return head;
+}
+}
+
 
