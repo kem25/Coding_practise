@@ -388,7 +388,8 @@ public class Solution {
         Scanner in = new Scanner(System.in);
         Stack<Integer> s = new Stack<Integer>();
         Stack<Integer>s1 = new Stack<Integer>();
-        while(in.hasNext()==true){
+        int lenght = in.nextInt();
+        for(int i=0;i<lenght;i++){
         int x= in.nextInt();
         if(x==1){
             int y = in.nextInt();
@@ -396,31 +397,38 @@ public class Solution {
             }
  
         else if(x==2){
+            if(s1.empty()){
                 while(!s.empty()){
                   int w = s.pop();
                     s1.push(w);
                 }
             s1.pop();
-            while(!s1.empty()){
-                int x1 = s1.pop();
-                s.push(x1);
             }
+            else{
+                s1.pop();
+            }
+            
         
         }
         else if(x==3){
+            if(s1.empty()){
             while(!s.empty()){
                   int w = s.pop();
                     s1.push(w);
             }
-           int r = s1.pop();
+           int r = s1.peek();
             System.out.println(r);
-                 s1.push(r);
-             while(!s1.empty()){
-                int x2 = s1.pop();
-                s.push(x2);
             }
-        
+            else{
+                int r = s1.peek();
+               System.out.println(r);
+            
         }
+            
+        
+ 
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
     }
     }
 }
