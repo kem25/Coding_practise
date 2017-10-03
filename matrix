@@ -374,4 +374,53 @@ else{
 }
 }
 
+// Insertion and deletion into a queue using a stack
 
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Stack<Integer> s = new Stack<Integer>();
+        Stack<Integer>s1 = new Stack<Integer>();
+        while(in.hasNext()==true){
+        int x= in.nextInt();
+        if(x==1){
+            int y = in.nextInt();
+            s.push(y);    
+            }
+ 
+        else if(x==2){
+                while(!s.empty()){
+                  int w = s.pop();
+                    s1.push(w);
+                }
+            s1.pop();
+            while(!s1.empty()){
+                int x1 = s1.pop();
+                s.push(x1);
+            }
+        
+        }
+        else if(x==3){
+            while(!s.empty()){
+                  int w = s.pop();
+                    s1.push(w);
+            }
+           int r = s1.pop();
+            System.out.println(r);
+                 s1.push(r);
+             while(!s1.empty()){
+                int x2 = s1.pop();
+                s.push(x2);
+            }
+        
+        }
+    }
+    }
+}
