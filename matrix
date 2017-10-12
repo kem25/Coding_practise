@@ -467,3 +467,37 @@ public class Solution {
             return Sum;
         }
     }
+
+//
+ package name!
+
+import java.io.*;
+
+class myCode
+{
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        String msg = "qwsssdefjjtpmdddsq";
+        char collection[]=msg.toChar();
+        ArrayList<Integer> al = new ArrayList<Integer>[msg.length];
+        for(int i=0;i<collection.length;i++){
+            int frequency =0;
+            for(int j=i+1;j<collection.length;j++){
+            if(collection[i]==collection[j]){
+            frequency++;
+            if(frequency>1)
+                continue;
+            }
+}
+            al.add(collection[i]);
+            
+    }
+        int finalresult =msg.length;
+        for(int i=0;i<al.length;i++){
+            int result = collection.indexOf(al[i]);
+            if(result<finalresult){
+                finalresult=result;
+            }
+}
+        System.out.println(finalresult);
+}
